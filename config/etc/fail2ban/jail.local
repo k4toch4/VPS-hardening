@@ -1,0 +1,33 @@
+# /etc/fail2ban/jail.local
+# We use jail.local and not jail.conf because jail.conf belongs to the package
+# and overwrite with every update. jail.local has priority.
+
+[DEFAULT]
+# Never ban the server.
+ignoreip = 127.0.0.1/8 ::1
+
+# Observation window: it count the fails in 10 minutes.
+findtime = 10m
+
+# Fails permitted under that observation windows before get banned.
+maxretry = 5
+
+# Duration of first ban.
+bantime = 1h
+
+# Repeat offenders: every new ban last long (1h, 2h, 4h...) with a max of 1 week.
+bantime.increment = true
+bantime.factor = 2
+bantime.maxtime = 1w
+
+# Read logs from journald.
+backend = systemd
+
+# Apply bans with UFW.
+banaction = ufw
+
+[sshd]
+enabled = true
+port = ssh
+# More strict
+maxretry = 3

@@ -1,0 +1,84 @@
+## /etc/audit/rules.d/hardening.rules
+## Audit rules based on the CIS Ubuntu Benchmark (section "Configure auditd rules").
+## Global settings (-D, -b, -f) already live in the default audit.rules file.
+## Keys (-k) tag each event so it can be searched with: ausearch -k <key> -i
+
+## Ignore errors from paths that do not exist on this system (keeps loading the rest)
+-i
+
+## ---------- Identity: users, groups and passwords ----------
+-w /etc/passwd -p wa -k identity
+-w /etc/shadow -p wa -k identity
+-w /etc/group -p wa -k identity
+-w /etc/gshadow -p wa -k identity
+-w /etc/security/opasswd -p wa -k identity
+
+## ---------- Privileges: sudo configuration ----------
+-w /etc/sudoers -p wa -k scope
+-w /etc/sudoers.d/ -p wa -k scope
+
+## Commands run as another user (e.g. sudo): effective UID differs from real UID
+-a always,exit -F arch=b64 -C euid!=uid -F auid!=unset -S execve -k user_emulation
+-a always,exit -F arch=b32 -C euid!=uid -F auid!=unset -S execve -k user_emulation
+
+## ---------- Remote access: SSH configuration ----------
+-w /etc/ssh/sshd_config -p wa -k sshd
+-w /etc/ssh/sshd_config.d/ -p wa -k sshd
+
+## ---------- Logins and sessions ----------
+-w /var/log/lastlog -p wa -k logins
+-w /var/run/faillock/ -p wa -k logins
+-w /var/run/utmp -p wa -k session
+-w /var/log/wtmp -p wa -k session
+-w /var/log/btmp -p wa -k session
+
+## ---------- System time changes (breaks log correlation if tampered) ----------
+-a always,exit -F arch=b64 -S adjtimex,settimeofday,clock_settime -k time-change
+-a always,exit -F arch=b32 -S adjtimex,settimeofday,clock_settime -k time-change
+-w /etc/localtime -p wa -k time-change
+
+## ---------- Network identity and configuration ----------
+-a always,exit -F arch=b64 -S sethostname,setdomainname -k system-locale
+-a always,exit -F arch=b32 -S sethostname,setdomainname -k system-locale
+-w /etc/hosts -p wa -k system-locale
+-w /etc/hostname -p wa -k system-locale
+-w /etc/netplan/ -p wa -k system-locale
+-w /etc/issue -p wa -k system-locale
+-w /etc/issue.net -p wa -k system-locale
+
+## ---------- Kernel modules (rootkits often load as modules) ----------
+-a always,exit -F arch=b64 -S init_module,finit_module,delete_module -k modules
+-w /usr/bin/kmod -p x -k modules
+
+## ---------- Permission and ownership changes by real users (auid >= 1000) ----------
+-a always,exit -F arch=b64 -S chmod,fchmod,fchmodat,chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=unset -k perm_mod
+-a always,exit -F arch=b64 -S setxattr,lsetxattr,fsetxattr,removexattr,lremovexattr,fremovexattr -F auid>=1000 -F auid!=unset -k perm_mod
+
+## ---------- Failed file access attempts (permission denied) ----------
+-a always,exit -F arch=b64 -S open,openat,creat,truncate,ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=unset -k access
+-a always,exit -F arch=b64 -S open,openat,creat,truncate,ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=unset -k access
+
+## ---------- File deletions and renames by real users ----------
+-a always,exit -F arch=b64 -S unlink,unlinkat,rename,renameat -F auid>=1000 -F auid!=unset -k delete
+
+## ---------- Filesystem mounts by real users (e.g. data exfiltration) ----------
+-a always,exit -F arch=b64 -S mount -F auid>=1000 -F auid!=unset -k mounts
+
+## ---------- Scheduled tasks (common persistence technique) ----------
+-w /etc/crontab -p wa -k cron
+-w /etc/cron.d/ -p wa -k cron
+-w /var/spool/cron/ -p wa -k cron
+
+## ---------- Mandatory access control (AppArmor) ----------
+-w /etc/apparmor/ -p wa -k MAC-policy
+-w /etc/apparmor.d/ -p wa -k MAC-policy
+
+## ---------- The audit system itself (attackers try to blind it) ----------
+-w /etc/audit/ -p wa -k auditconfig
+-w /usr/sbin/auditctl -p x -k audittools
+-w /usr/sbin/auditd -p x -k audittools
+
+## ---------- Lock the configuration ----------
+## -e 2 makes rules immutable until reboot: an attacker with root cannot disable
+## auditing silently (a reboot is required, which is noisy). Must be the LAST line.
+## -e 2

@@ -1,0 +1,28 @@
+# Nmap 7.95 scan initiated Mon Nov  2 12:21:49 2026 as: nmap -sU --top-ports 50 --reason -oA reports/before/nmap-udp 192.168.122.191
+Nmap scan report for 192.168.122.191 (192.168.122.191)
+Host is up, received arp-response (0.00041s latency).
+Not shown: 30 open|filtered udp ports (no-response)
+PORT      STATE  SERVICE         REASON
+53/udp    closed domain          port-unreach ttl 64
+123/udp   closed ntp             port-unreach ttl 64
+135/udp   closed msrpc           port-unreach ttl 64
+137/udp   closed netbios-ns      port-unreach ttl 64
+162/udp   closed snmptrap        port-unreach ttl 64
+500/udp   closed isakmp          port-unreach ttl 64
+626/udp   closed serialnumberd   port-unreach ttl 64
+996/udp   closed vsinet          port-unreach ttl 64
+997/udp   closed maitrd          port-unreach ttl 64
+1025/udp  closed blackjack       port-unreach ttl 64
+1026/udp  closed win-rpc         port-unreach ttl 64
+1433/udp  closed ms-sql-s        port-unreach ttl 64
+1645/udp  closed radius          port-unreach ttl 64
+1646/udp  closed radacct         port-unreach ttl 64
+2049/udp  closed nfs             port-unreach ttl 64
+5060/udp  closed sip             port-unreach ttl 64
+20031/udp closed bakbonenetvault port-unreach ttl 64
+32768/udp closed omad            port-unreach ttl 64
+49152/udp closed unknown         port-unreach ttl 64
+49154/udp closed unknown         port-unreach ttl 64
+MAC Address: 52:54:00:98:1F:FC (QEMU virtual NIC)
+
+# Nmap done at Mon Nov  2 12:22:05 2026 -- 1 IP address (1 host up) scanned in 16.09 seconds

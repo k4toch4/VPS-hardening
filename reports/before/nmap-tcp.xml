@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Nov  2 12:19:16 2026 as: nmap -sS -sV -p- -T4 -&#45;reason -oA reports/before/nmap-tcp 192.168.122.191 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -p- -T4 -&#45;reason -oA reports/before/nmap-tcp 192.168.122.191" start="1793632756" startstr="Mon Nov  2 12:19:16 2026" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.122.191" addrtype="ipv4"/>
+<address addr="52:54:00:98:1F:FC" addrtype="mac" vendor="QEMU virtual NIC"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1793632756" endtime="1793632757"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.122.191" addrtype="ipv4"/>
+<address addr="52:54:00:98:1F:FC" addrtype="mac" vendor="QEMU virtual NIC"/>
+<hostnames>
+<hostname name="192.168.122.191" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65534">
+<extrareasons reason="reset" count="65534" proto="tcp" ports="1-21,23-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="10.2p1 Ubuntu 2ubuntu3.8" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:10.2p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
+</ports>
+<times srtt="38" rttvar="1" to="100000"/>
+</host>
+<runstats><finished time="1793632757" timestr="Mon Nov  2 12:19:17 2026" summary="Nmap done at Mon Nov  2 12:19:17 2026; 1 IP address (1 host up) scanned in 0.97 seconds" elapsed="0.97" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

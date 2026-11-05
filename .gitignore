@@ -1,0 +1,10 @@
+# Never commit keys, disk images or local inventories
+id_*
+*.key
+*.pem
+*.qcow2
+*.iso
+*.tgz
+hardening-inventory.txt
+# nmap XML is large and redundant with .nmap/.gnmap
+*.xml

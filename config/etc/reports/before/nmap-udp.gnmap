@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Nov  2 12:21:49 2026 as: nmap -sU --top-ports 50 --reason -oA reports/before/nmap-udp 192.168.122.191
+Host: 192.168.122.191 (192.168.122.191)	Status: Up
+Host: 192.168.122.191 (192.168.122.191)	Ports: 53/closed/udp//domain///, 123/closed/udp//ntp///, 135/closed/udp//msrpc///, 137/closed/udp//netbios-ns///, 162/closed/udp//snmptrap///, 500/closed/udp//isakmp///, 626/closed/udp//serialnumberd///, 996/closed/udp//vsinet///, 997/closed/udp//maitrd///, 1025/closed/udp//blackjack///, 1026/closed/udp//win-rpc///, 1433/closed/udp//ms-sql-s///, 1645/closed/udp//radius///, 1646/closed/udp//radacct///, 2049/closed/udp//nfs///, 5060/closed/udp//sip///, 20031/closed/udp//bakbonenetvault///, 32768/closed/udp//omad///, 49152/closed/udp/////, 49154/closed/udp/////	Ignored State: open|filtered (30)
+# Nmap done at Mon Nov  2 12:22:05 2026 -- 1 IP address (1 host up) scanned in 16.09 seconds

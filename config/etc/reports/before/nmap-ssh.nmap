@@ -1,0 +1,50 @@
+# Nmap 7.95 scan initiated Mon Nov  2 12:23:51 2026 as: nmap -p 22 --script ssh-auth-methods,ssh2-enum-algos -oA reports/before/nmap-ssh 192.168.122.191
+Nmap scan report for 192.168.122.191 (192.168.122.191)
+Host is up (0.00021s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|     publickey
+|_    password
+| ssh2-enum-algos: 
+|   kex_algorithms: (10)
+|       mlkem768x25519-sha256
+|       sntrup761x25519-sha512
+|       sntrup761x25519-sha512@openssh.com
+|       curve25519-sha256
+|       curve25519-sha256@libssh.org
+|       ecdh-sha2-nistp256
+|       ecdh-sha2-nistp384
+|       ecdh-sha2-nistp521
+|       ext-info-s
+|       kex-strict-s-v00@openssh.com
+|   server_host_key_algorithms: (4)
+|       rsa-sha2-512
+|       rsa-sha2-256
+|       ecdsa-sha2-nistp256
+|       ssh-ed25519
+|   encryption_algorithms: (6)
+|       chacha20-poly1305@openssh.com
+|       aes128-gcm@openssh.com
+|       aes256-gcm@openssh.com
+|       aes128-ctr
+|       aes192-ctr
+|       aes256-ctr
+|   mac_algorithms: (10)
+|       umac-64-etm@openssh.com
+|       umac-128-etm@openssh.com
+|       hmac-sha2-256-etm@openssh.com
+|       hmac-sha2-512-etm@openssh.com
+|       hmac-sha1-etm@openssh.com
+|       umac-64@openssh.com
+|       umac-128@openssh.com
+|       hmac-sha2-256
+|       hmac-sha2-512
+|       hmac-sha1
+|   compression_algorithms: (2)
+|       none
+|_      zlib@openssh.com
+
+# Nmap done at Mon Nov  2 12:23:51 2026 -- 1 IP address (1 host up) scanned in 0.11 seconds

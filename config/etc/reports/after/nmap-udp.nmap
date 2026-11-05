@@ -1,0 +1,8 @@
+# Nmap 7.95 scan initiated Thu Nov  5 17:02:43 2026 as: nmap -sU --top-ports 50 --reason -oA reports/after/nmap-udp 192.168.122.191
+Nmap scan report for 192.168.122.191 (192.168.122.191)
+Host is up, received arp-response (0.00035s latency).
+All 50 scanned ports on 192.168.122.191 (192.168.122.191) are in ignored states.
+Not shown: 50 open|filtered udp ports (no-response)
+MAC Address: 52:54:00:98:1F:FC (QEMU virtual NIC)
+
+# Nmap done at Thu Nov  5 17:02:46 2026 -- 1 IP address (1 host up) scanned in 2.54 seconds

@@ -1,0 +1,695 @@
+
+[ Lynis 3.1.7 ]
+
+################################################################################
+  Lynis comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+  welcome to redistribute it under the terms of the GNU General Public License.
+  See the LICENSE file for details about using this software.
+
+  2007-2025, CISOfy - https://cisofy.com/lynis/
+  Enterprise support available (compliance, plugins, interface and tools)
+################################################################################
+
+
+[+] Initializing program
+------------------------------------
+[2C- Detecting OS... [41C [ DONE ]
+[2C- Checking profiles...[37C [ DONE ]
+
+  ---------------------------------------------------
+  Program version:           3.1.7
+  Operating system:          Linux
+  Operating system name:     Ubuntu
+  Operating system version:  26.04
+  End-of-life:               NO
+  Kernel version:            7.0.0
+  Hardware platform:         x86_64
+  Hostname:                  serverh
+  ---------------------------------------------------
+  Profiles:                  /home/serverhh/lynis/default.prf
+  Log file:                  /var/log/lynis.log
+  Report file:               /var/log/lynis-report.dat
+  Report version:            1.0
+  Plugin directory:          ./plugins
+  ---------------------------------------------------
+  Auditor:                   [Not Specified]
+  Language:                  en
+  Test category:             all
+  Test group:                all
+  ---------------------------------------------------
+[2C- Program update status... [32C [ NO UPDATE ]
+
+[+] System tools
+------------------------------------
+[2C- Scanning available tools...[30C
+[2C- Checking system binaries...[30C
+
+[+] Plugins (phase 1)
+------------------------------------
+[0CNote: plugins have more extensive tests and may take several minutes to complete[0C
+[0C [0C
+[2C- Plugin: pam[46C
+    [..]
+[2C- Plugin: systemd[42C
+    [................]
+
+[+] Boot and services
+------------------------------------
+[2C- Service Manager[42C [ systemd ]
+[2C- Checking UEFI boot[39C [ DISABLED ]
+[2C- Checking presence GRUB2[34C [ FOUND ]
+[4C- Checking for password protection[23C [ NONE ]
+[2C- Check running services (systemctl)[23C [ DONE ]
+[8CResult: found 22 running services[20C
+[2C- Check enabled services at boot (systemctl)[15C [ DONE ]
+[8CResult: found 50 enabled services[20C
+[2C- Check startup files (permissions)[24C [ OK ]
+[2C- Running 'systemd-analyze security'[23C
+[6CUnit name (exposure value) and predicate[15C
+[6C--------------------------------[23C
+[4C- acct-monthly-report.service (value=6.4)[16C [ MEDIUM ]
+[4C- auditd.service (value=9.4)[29C [ UNSAFE ]
+[4C- chrony.service (value=3.7)[29C [ PROTECTED ]
+[4C- cron.service (value=9.6)[31C [ UNSAFE ]
+[4C- dbus.service (value=9.2)[31C [ UNSAFE ]
+[4C- dm-event.service (value=9.5)[27C [ UNSAFE ]
+[4C- dmesg.service (value=9.6)[30C [ UNSAFE ]
+[4C- emergency.service (value=9.5)[26C [ UNSAFE ]
+[4C- fail2ban.service (value=9.6)[27C [ UNSAFE ]
+[4C- fwupd.service (value=4.5)[30C [ PROTECTED ]
+[4C- getty@tty1.service (value=9.6)[25C [ UNSAFE ]
+[4C- lvm2-lvmpolld.service (value=9.5)[22C [ UNSAFE ]
+[4C- networkd-dispatcher.service (value=9.6)[16C [ UNSAFE ]
+[4C- plymouth-halt.service (value=9.5)[22C [ UNSAFE ]
+[4C- plymouth-kexec.service (value=9.5)[21C [ UNSAFE ]
+[4C- plymouth-poweroff.service (value=9.5)[18C [ UNSAFE ]
+[4C- plymouth-reboot.service (value=9.5)[20C [ UNSAFE ]
+[4C- plymouth-start.service (value=9.5)[21C [ UNSAFE ]
+[4C- polkit.service (value=1.2)[29C [ PROTECTED ]
+[4C- rc-local.service (value=9.6)[27C [ UNSAFE ]
+[4C- rescue.service (value=9.5)[29C [ UNSAFE ]
+[4C- rsyslog.service (value=6.3)[28C [ MEDIUM ]
+[4C- serial-getty@ttyS0.service (value=9.6)[17C [ UNSAFE ]
+[4C- snap.hwctl.hwctl-daemon.service (value=9.6)[12C [ UNSAFE ]
+[4C- snapd.service (value=9.9)[30C [ UNSAFE ]
+[4C- ssh.service (value=9.6)[32C [ UNSAFE ]
+[4C- sshd@sshd-keygen.service (value=9.6)[19C [ UNSAFE ]
+[4C- systemd-ask-password-console.service (value=9.4)[7C [ UNSAFE ]
+[4C- systemd-ask-password-plymouth.service (value=9.5)[6C [ UNSAFE ]
+[4C- systemd-ask-password-wall.service (value=9.4)[10C [ UNSAFE ]
+[4C- systemd-bsod.service (value=9.5)[23C [ UNSAFE ]
+[4C- systemd-hostnamed.service (value=1.7)[18C [ PROTECTED ]
+[4C- systemd-journald.service (value=4.9)[19C [ PROTECTED ]
+[4C- systemd-logind.service (value=2.8)[21C [ PROTECTED ]
+[4C- systemd-networkd.service (value=2.9)[19C [ PROTECTED ]
+[4C- systemd-resolved.service (value=2.2)[19C [ PROTECTED ]
+[4C- systemd-rfkill.service (value=9.4)[21C [ UNSAFE ]
+[4C- systemd-udevd.service (value=7.1)[22C [ MEDIUM ]
+[4C- thermald.service (value=9.6)[27C [ UNSAFE ]
+[4C- tpm-udev.service (value=9.6)[27C [ UNSAFE ]
+[4C- ubuntu-advantage.service (value=9.6)[19C [ UNSAFE ]
+[4C- udisks2.service (value=9.6)[28C [ UNSAFE ]
+[4C- unattended-upgrades.service (value=9.6)[16C [ UNSAFE ]
+[4C- upower.service (value=2.4)[29C [ PROTECTED ]
+[4C- user@1000.service (value=9.4)[26C [ UNSAFE ]
+[4C- uuidd.service (value=5.8)[30C [ MEDIUM ]
+
+[+] Kernel
+------------------------------------
+[2C- Checking default runlevel[32C [ runlevel 5 ]
+[2C- Checking CPU support (NX/PAE)[28C
+[4CCPU support: PAE and/or NoeXecute supported[14C [ FOUND ]
+[2C- Checking kernel version and release[22C [ DONE ]
+[2C- Checking kernel type[37C [ DONE ]
+[2C- Checking loaded kernel modules[27C [ DONE ]
+[6CFound 68 active modules[32C
+[2C- Checking Linux kernel configuration file[17C [ FOUND ]
+[2C- Checking default I/O kernel scheduler[20C [ NOT FOUND ]
+[2C- Checking for available kernel update[21C [ OK ]
+[2C- Checking core dumps configuration[24C
+[4C- configuration in systemd conf files[20C [ DEFAULT ]
+[4C- configuration in /etc/profile[26C [ DEFAULT ]
+[4C- 'hard' configuration in /etc/security/limits.conf[6C [ ENABLED ]
+[4C- 'soft' configuration in /etc/security/limits.conf[6C [ DISABLED ]
+[4C- Checking setuid core dumps configuration[15C [ DISABLED ]
+[2C- Check if reboot is needed[32C [ NO ]
+
+[+] Memory and Processes
+------------------------------------
+[2C- Checking /proc/meminfo[35C [ FOUND ]
+[2C- Searching for dead/zombie processes[22C [ NOT FOUND ]
+[2C- Searching for IO waiting processes[23C [ NOT FOUND ]
+[2C- Search prelink tooling[35C [ NOT FOUND ]
+
+[+] Users, Groups and Authentication
+------------------------------------
+[2C- Administrator accounts[35C [ OK ]
+[2C- Unique UIDs[46C [ OK ]
+[2C- Consistency of group files (grpck)[23C [ OK ]
+[2C- Unique group IDs[41C [ OK ]
+[2C- Unique group names[39C [ OK ]
+[2C- Password file consistency[32C [ OK ]
+[2C- Password hashing methods[33C [ SUGGESTION ]
+[2C- Password hashing rounds (minimum)[24C [ CONFIGURED ]
+[2C- Query system users (non daemons)[25C [ DONE ]
+[2C- NIS+ authentication support[30C [ NOT ENABLED ]
+[2C- NIS authentication support[31C [ NOT ENABLED ]
+[2C- Sudoers file(s)[42C [ FOUND ]
+[4C- Permissions for directory: /etc/sudoers.d[14C [ WARNING ]
+[4C- Permissions for: /etc/sudoers[26C [ OK ]
+[4C- Permissions for: /etc/sudoers.d/README[17C [ OK ]
+[2C- PAM password strength tools[30C [ OK ]
+[2C- PAM configuration files (pam.conf)[23C [ FOUND ]
+[2C- PAM configuration files (pam.d)[26C [ FOUND ]
+[2C- PAM modules[46C [ FOUND ]
+[2C- LDAP module in PAM[39C [ NOT FOUND ]
+[2C- Accounts without expire date[29C [ SUGGESTION ]
+[2C- Accounts without password[32C [ OK ]
+[2C- Locked accounts[42C [ OK ]
+[2C- Checking user password aging (minimum)[19C [ DISABLED ]
+[2C- User password aging (maximum)[28C [ DISABLED ]
+[2C- Checking expired passwords[31C [ OK ]
+[2C- Checking Linux single user mode authentication[11C [ OK ]
+[2C- Determining default umask[32C
+[4C- umask (/etc/profile)[35C [ NOT FOUND ]
+[4C- umask (/etc/login.defs)[32C [ OK ]
+[2C- LDAP authentication support[30C [ NOT ENABLED ]
+[2C- Logging failed login attempts[28C [ DISABLED ]
+
+[+] Kerberos
+------------------------------------
+[2C- Check for Kerberos KDC and principals[20C [ NOT FOUND ]
+
+[+] Shells
+------------------------------------
+[2C- Checking shells from /etc/shells[25C
+[4CResult: found 9 shells (valid shells: 9).[16C
+[4C- Session timeout settings/tools[25C [ NONE ]
+[2C- Checking default umask values[28C
+[4C- Checking default umask in /etc/bash.bashrc[13C [ NONE ]
+[4C- Checking default umask in /etc/profile[17C [ NONE ]
+
+[+] File systems
+------------------------------------
+[2C- Checking mount points[36C
+[4C- Checking /home mount point[29C [ SUGGESTION ]
+[4C- Checking /tmp mount point[30C [ OK ]
+[4C- Checking /var mount point[30C [ SUGGESTION ]
+[2C- Checking LVM volume groups[31C [ FOUND ]
+[4C- Checking LVM volumes[35C [ FOUND ]
+[2C- Query swap partitions (fstab)[28C [ OK ]
+[2C- Testing swap partitions[34C [ OK ]
+[2C- Testing /proc mount (hidepid)[28C [ SUGGESTION ]
+[2C- Checking for old files in /tmp[27C [ OK ]
+[2C- Checking /tmp sticky bit[33C [ OK ]
+[2C- Checking /var/tmp sticky bit[29C [ OK ]
+[2C- ACL support root file system[29C [ ENABLED ]
+[2C- Mount options of /[39C [ OK ]
+[2C- Mount options of /boot[35C [ DEFAULT ]
+[2C- Mount options of /dev[36C [ PARTIALLY HARDENED ]
+[2C- Mount options of /dev/shm[32C [ PARTIALLY HARDENED ]
+[2C- Mount options of /run[36C [ HARDENED ]
+[2C- Mount options of /tmp[36C [ PARTIALLY HARDENED ]
+[2C- Total without nodev:5 noexec:14 nosuid:8 ro or noexec (W^X): 9 of total 32[0C
+[2C- Disable kernel support of some filesystems[15C
+
+[+] USB Devices
+------------------------------------
+[2C- Checking usb-storage driver (modprobe config)[12C [ NOT DISABLED ]
+[2C- Checking USB devices authorization[23C [ ENABLED ]
+[2C- Checking USBGuard[40C [ NOT FOUND ]
+
+[+] Storage
+------------------------------------
+[2C- Checking firewire ohci driver (modprobe config)[10C [ DISABLED ]
+
+[+] NFS
+------------------------------------
+[2C- Check running NFS daemon[33C [ NOT FOUND ]
+
+[+] Name services
+------------------------------------
+[2C- Checking search domains[34C [ FOUND ]
+[2C- Checking /etc/resolv.conf options[24C [ FOUND ]
+[2C- Searching DNS domain name[32C [ UNKNOWN ]
+[2C- Checking /etc/hosts[38C
+[4C- Duplicate entries in hosts file[24C [ NONE ]
+[4C- Presence of configured hostname in /etc/hosts[10C [ FOUND ]
+[4C- Hostname mapped to localhost[27C [ NOT FOUND ]
+[4C- Localhost mapping to IP address[24C [ OK ]
+
+[+] Ports and packages
+------------------------------------
+[2C- Searching package managers[31C
+[4C- Searching dpkg package manager[25C [ FOUND ]
+[6C- Querying package manager[29C
+
+  [WARNING]: Test PKGS-7345 had a long execution: 16.073227 seconds
+
+[4C- Query unpurged packages[32C [ FOUND ]
+[4C- debsums utility[40C [ FOUND ]
+[6C- Cron job for debsums[33C [ NOT FOUND ]
+[2C- Checking security repository in sources.list.d directory[1C [ OK ]
+[2C- Checking APT package database[28C [ OK ]
+[2C- Checking vulnerable packages[29C [ OK ]
+[2C- Checking upgradeable packages[28C [ NONE ]
+[2C- Checking package audit tool[30C [ INSTALLED ]
+[4CFound: apt-check[41C
+[2C- Toolkit for automatic upgrades (unattended-upgrade)[6C [ FOUND ]
+
+[+] Networking
+------------------------------------
+[2C- Checking IPv6 configuration[30C [ ENABLED ]
+[6CConfiguration method[35C [ AUTO ]
+[6CIPv6 only[46C [ NO ]
+[2C- Checking configured nameservers[26C
+[4C- Testing nameservers[36C
+[8CNameserver: 127.0.0.53[31C [ OK ]
+[4C- DNSSEC supported (systemd-resolved)[20C [ UNKNOWN ]
+[2C- Checking default gateway[33C [ DONE ]
+[2C- Getting listening ports (TCP/UDP)[24C [ DONE ]
+[2C- Checking promiscuous interfaces[26C [ OK ]
+[2C- Checking waiting connections[29C [ OK ]
+[2C- Checking status DHCP client[30C [ NOT ACTIVE ]
+[2C- Checking for ARP monitoring software[21C [ NOT FOUND ]
+[2C- Uncommon network protocols[31C [ 0 ]
+
+[+] Printers and Spools
+------------------------------------
+[2C- Checking cups daemon[37C [ NOT FOUND ]
+[2C- Checking lp daemon[39C [ NOT RUNNING ]
+
+[+] Software: e-mail and messaging
+------------------------------------
+
+[+] Software: firewalls
+------------------------------------
+[2C- Checking iptables kernel module[26C [ NOT FOUND ]
+[2C- Checking host based firewall[29C [ ACTIVE ]
+
+[+] Software: webserver
+------------------------------------
+[2C- Checking Apache[42C [ NOT FOUND ]
+[2C- Checking nginx[43C [ NOT FOUND ]
+
+[+] SSH Support
+------------------------------------
+[2C- Checking running SSH daemon[30C [ FOUND ]
+[4C- Searching SSH configuration[28C [ FOUND ]
+[4C- OpenSSH option: AllowTcpForwarding[21C [ OK ]
+[4C- OpenSSH option: ClientAliveCountMax[20C [ OK ]
+[4C- OpenSSH option: ClientAliveInterval[20C [ OK ]
+[4C- OpenSSH option: FingerprintHash[24C [ OK ]
+[4C- OpenSSH option: GatewayPorts[27C [ OK ]
+[4C- OpenSSH option: IgnoreRhosts[27C [ OK ]
+[4C- OpenSSH option: LoginGraceTime[25C [ OK ]
+[4C- OpenSSH option: LogLevel[31C [ OK ]
+[4C- OpenSSH option: MaxAuthTries[27C [ OK ]
+[4C- OpenSSH option: MaxSessions[28C [ OK ]
+[4C- OpenSSH option: PermitRootLogin[24C [ OK ]
+[4C- OpenSSH option: PermitUserEnvironment[18C [ OK ]
+[4C- OpenSSH option: PermitTunnel[27C [ OK ]
+[4C- OpenSSH option: Port[35C [ SUGGESTION ]
+[4C- OpenSSH option: PrintLastLog[27C [ OK ]
+[4C- OpenSSH option: StrictModes[28C [ OK ]
+[4C- OpenSSH option: TCPKeepAlive[27C [ OK ]
+[4C- OpenSSH option: UseDNS[33C [ OK ]
+[4C- OpenSSH option: X11Forwarding[26C [ OK ]
+[4C- OpenSSH option: AllowAgentForwarding[19C [ OK ]
+[4C- OpenSSH option: AllowUsers[29C [ NOT FOUND ]
+[4C- OpenSSH option: AllowGroups[28C [ NOT FOUND ]
+
+[+] SNMP Support
+------------------------------------
+[2C- Checking running SNMP daemon[29C [ NOT FOUND ]
+
+[+] Databases
+------------------------------------
+[4CNo database engines found[32C
+
+[+] LDAP Services
+------------------------------------
+[2C- Checking OpenLDAP instance[31C [ NOT FOUND ]
+
+[+] PHP
+------------------------------------
+[2C- Checking PHP[45C [ NOT FOUND ]
+
+[+] Squid Support
+------------------------------------
+[2C- Checking running Squid daemon[28C [ NOT FOUND ]
+
+[+] Logging and files
+------------------------------------
+[2C- Checking for a running log daemon[24C [ OK ]
+[4C- Checking Syslog-NG status[30C [ NOT FOUND ]
+[4C- Checking systemd journal status[24C [ FOUND ]
+[4C- Checking Metalog status[32C [ NOT FOUND ]
+[4C- Checking RSyslog status[32C [ FOUND ]
+[4C- Checking RFC 3195 daemon status[24C [ NOT FOUND ]
+[4C- Checking minilogd instances[28C [ NOT FOUND ]
+[4C- Checking wazuh-agent daemon status[21C [ NOT FOUND ]
+[2C- Checking logrotate presence[30C [ OK ]
+[2C- Checking remote logging[34C [ NOT ENABLED ]
+[2C- Checking log directories (static list)[19C [ DONE ]
+[2C- Checking open log files[34C [ DONE ]
+[2C- Checking deleted files in use[28C [ FILES FOUND ]
+
+[+] Insecure services
+------------------------------------
+[2C- Installed inetd package[34C [ NOT FOUND ]
+[2C- Installed xinetd package[33C [ OK ]
+[4C- xinetd status[42C [ NOT ACTIVE ]
+[2C- Installed rsh client package[29C [ OK ]
+[2C- Installed rsh server package[29C [ OK ]
+[2C- Installed telnet client package[26C [ OK ]
+[2C- Installed telnet server package[26C [ NOT FOUND ]
+[2C- Checking NIS client installation[25C [ OK ]
+[2C- Checking NIS server installation[25C [ OK ]
+[2C- Checking TFTP client installation[24C [ OK ]
+[2C- Checking TFTP server installation[24C [ OK ]
+
+[+] Banners and identification
+------------------------------------
+[2C- /etc/issue[47C [ FOUND ]
+[4C- /etc/issue contents[36C [ OK ]
+[2C- /etc/issue.net[43C [ FOUND ]
+[4C- /etc/issue.net contents[32C [ OK ]
+
+[+] Scheduled tasks
+------------------------------------
+[2C- Checking crontab and cronjob files[23C [ DONE ]
+
+[+] Accounting
+------------------------------------
+[2C- Checking accounting information[26C [ OK ]
+[2C- Checking sysstat accounting data[25C [ ENABLED ]
+[2C- Checking auditd[42C [ ENABLED ]
+[4C- Checking audit rules[35C [ OK ]
+[4C- Checking audit configuration file[22C [ OK ]
+[4C- Checking auditd log file[31C [ FOUND ]
+
+[+] Time and Synchronization
+------------------------------------
+[2C- NTP daemon found: chronyd[32C [ FOUND ]
+[2C- Checking for a running NTP daemon or client[14C [ OK ]
+
+[+] Cryptography
+------------------------------------
+[2C- Checking for expired SSL certificates [0/125][12C [ NONE ]
+
+  [WARNING]: Test CRYP-7902 had a long execution: 17.300255 seconds
+
+[2C- Found 0 encrypted and 1 unencrypted swap devices in use.[1C [ OK ]
+[2C- Kernel entropy is sufficient[29C [ YES ]
+[2C- HW RNG & rngd[44C [ NO ]
+[2C- SW prng[50C [ NO ]
+[2C- MOR variable not found[35C [ WEAK ]
+
+[+] Virtualization
+------------------------------------
+
+[+] Containers
+------------------------------------
+
+[+] Security frameworks
+------------------------------------
+[2C- Checking presence AppArmor[31C [ FOUND ]
+[4C- Checking AppArmor status[31C [ ENABLED ]
+[8CFound 36 unconfined processes[24C
+[2C- Checking presence SELinux[32C [ NOT FOUND ]
+[2C- Checking presence TOMOYO Linux[27C [ NOT FOUND ]
+[2C- Checking presence grsecurity[29C [ NOT FOUND ]
+[2C- Checking for implemented MAC framework[19C [ OK ]
+
+[+] Software: file integrity
+------------------------------------
+[2C- Checking file integrity tools[28C
+[4C- AIDE[51C [ FOUND ]
+[6C- AIDE config file[37C [ FOUND ]
+[6C- AIDE database[40C [ FOUND ]
+[2C- dm-integrity (status)[36C [ DISABLED ]
+[2C- dm-verity (status)[39C [ DISABLED ]
+[6C- AIDE config (Checksum)[31C [ Suggestion ]
+[2C- Checking presence integrity tool[25C [ FOUND ]
+
+[+] Software: System tooling
+------------------------------------
+[2C- Checking automation tooling[30C
+[2C- Automation tooling[39C [ NOT FOUND ]
+[2C- Checking presence of Fail2ban[28C [ FOUND ]
+[4C- Checking Fail2ban jails[32C [ ENABLED ]
+[2C- Checking for IDS/IPS tooling[29C [ FOUND ]
+
+[+] Software: Malware
+------------------------------------
+[2C- Checking Rootkit Hunter[34C [ FOUND ]
+[2C- Malware software components[30C [ FOUND ]
+[4C- Active agent[43C [ NOT FOUND ]
+[4C- Rootkit scanner[40C [ FOUND ]
+
+[+] File Permissions
+------------------------------------
+[2C- Starting file permissions check[26C
+[4CFile: /boot/grub/grub.cfg[32C [ OK ]
+[4CFile: /etc/crontab[39C [ OK ]
+[4CFile: /etc/group[41C [ OK ]
+[4CFile: /etc/group-[40C [ OK ]
+[4CFile: /etc/hosts.allow[35C [ OK ]
+[4CFile: /etc/hosts.deny[36C [ OK ]
+[4CFile: /etc/issue[41C [ OK ]
+[4CFile: /etc/issue.net[37C [ OK ]
+[4CFile: /etc/passwd[40C [ OK ]
+[4CFile: /etc/passwd-[39C [ OK ]
+[4CFile: /etc/ssh/sshd_config[31C [ SUGGESTION ]
+[4CDirectory: /root/.ssh[36C [ OK ]
+[4CDirectory: /etc/cron.d[35C [ OK ]
+[4CDirectory: /etc/cron.daily[31C [ OK ]
+[4CDirectory: /etc/cron.hourly[30C [ OK ]
+[4CDirectory: /etc/cron.weekly[30C [ OK ]
+[4CDirectory: /etc/cron.monthly[29C [ OK ]
+
+[+] Home directories
+------------------------------------
+[2C- Permissions of home directories[26C [ OK ]
+[2C- Ownership of home directories[28C [ OK ]
+[2C- Checking shell history files[29C [ OK ]
+
+[+] Kernel Hardening
+------------------------------------
+[2C- Comparing sysctl key pairs with scan profile[13C
+[4C- dev.tty.ldisc_autoload (exp: 0)[24C [ OK ]
+[4C- fs.protected_fifos (exp: 2)[28C [ OK ]
+[4C- fs.protected_hardlinks (exp: 1)[24C [ OK ]
+[4C- fs.protected_regular (exp: 2)[26C [ OK ]
+[4C- fs.protected_symlinks (exp: 1)[25C [ OK ]
+[4C- fs.suid_dumpable (exp: 0)[30C [ OK ]
+[4C- kernel.core_uses_pid (exp: 1)[26C [ OK ]
+[4C- kernel.ctrl-alt-del (exp: 0)[27C [ OK ]
+[4C- kernel.dmesg_restrict (exp: 1)[25C [ OK ]
+[4C- kernel.kptr_restrict (exp: 2)[26C [ OK ]
+[4C- kernel.modules_disabled (exp: 1)[23C [ DIFFERENT ]
+[4C- kernel.perf_event_paranoid (exp: 2 3 4)[16C [ OK ]
+[4C- kernel.randomize_va_space (exp: 2)[21C [ OK ]
+[4C- kernel.sysrq (exp: 0)[34C [ OK ]
+[4C- kernel.unprivileged_bpf_disabled (exp: 1)[14C [ OK ]
+[4C- kernel.yama.ptrace_scope (exp: 1 2 3)[18C [ OK ]
+[4C- net.core.bpf_jit_harden (exp: 2)[23C [ OK ]
+[4C- net.ipv4.conf.all.accept_redirects (exp: 0)[12C [ OK ]
+[4C- net.ipv4.conf.all.accept_source_route (exp: 0)[9C [ OK ]
+[4C- net.ipv4.conf.all.bootp_relay (exp: 0)[17C [ OK ]
+[4C- net.ipv4.conf.all.forwarding (exp: 0)[18C [ OK ]
+[4C- net.ipv4.conf.all.log_martians (exp: 1)[16C [ OK ]
+[4C- net.ipv4.conf.all.mc_forwarding (exp: 0)[15C [ OK ]
+[4C- net.ipv4.conf.all.proxy_arp (exp: 0)[19C [ OK ]
+[4C- net.ipv4.conf.all.rp_filter (exp: 1)[19C [ OK ]
+[4C- net.ipv4.conf.all.send_redirects (exp: 0)[14C [ OK ]
+[4C- net.ipv4.conf.default.accept_redirects (exp: 0)[8C [ OK ]
+[4C- net.ipv4.conf.default.accept_source_route (exp: 0)[5C [ OK ]
+[4C- net.ipv4.conf.default.log_martians (exp: 1)[12C [ OK ]
+[4C- net.ipv4.icmp_echo_ignore_broadcasts (exp: 1)[10C [ OK ]
+[4C- net.ipv4.icmp_ignore_bogus_error_responses (exp: 1)[4C [ OK ]
+[4C- net.ipv4.tcp_syncookies (exp: 1)[23C [ OK ]
+[4C- net.ipv4.tcp_timestamps (exp: 0 1)[21C [ OK ]
+[4C- net.ipv6.conf.all.accept_redirects (exp: 0)[12C [ OK ]
+[4C- net.ipv6.conf.all.accept_source_route (exp: 0)[9C [ OK ]
+[4C- net.ipv6.conf.default.accept_redirects (exp: 0)[8C [ OK ]
+[4C- net.ipv6.conf.default.accept_source_route (exp: 0)[5C [ OK ]
+
+[+] Hardening
+------------------------------------
+[4C- Installed compiler(s)[34C [ FOUND ]
+[4C- Installed malware scanner[30C [ FOUND ]
+[4C- Non-native binary formats[30C [ FOUND ]
+
+[+] Custom tests
+------------------------------------
+[2C- Running custom tests... [33C [ NONE ]
+
+[+] Plugins (phase 2)
+------------------------------------
+[2C- Plugins (phase 2)[40C [ DONE ]
+
+================================================================================
+
+  -[ Lynis 3.1.7 Results ]-
+
+  Great, no warnings
+
+  Suggestions (24):
+  ----------------------------
+  * Set a password on GRUB boot loader to prevent altering boot configuration (e.g. boot in single user mode without password) [BOOT-5122] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/BOOT-5122/
+
+  * Determine runlevel and services at startup [BOOT-5180] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/BOOT-5180/
+
+  * Consider hardening system services [BOOT-5264] 
+    - Details  : Run '/usr/bin/systemd-analyze security SERVICE' for each service
+    - Related resources
+      * Article: Systemd features to secure service files: https://linux-audit.com/systemd/systemd-features-to-secure-units-and-services/
+      * Website: https://cisofy.com/lynis/controls/BOOT-5264/
+
+  * Check PAM configuration, add rounds if applicable and expire passwords to encrypt with new values [AUTH-9229] 
+    - Related resources
+      * Article: Linux password security: hashing rounds: https://linux-audit.com/authentication/configure-the-minimum-password-length-on-linux-systems/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9229/
+
+  * When possible set expire dates for all password protected accounts [AUTH-9282] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/AUTH-9282/
+
+  * Configure minimum password age in /etc/login.defs [AUTH-9286] 
+    - Related resources
+      * Article: Configure minimum password length for Linux systems: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9286/
+
+  * Configure maximum password age in /etc/login.defs [AUTH-9286] 
+    - Related resources
+      * Article: Configure minimum password length for Linux systems: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9286/
+
+  * To decrease the impact of a full /home file system, place /home on a separate partition [FILE-6310] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FILE-6310/
+
+  * To decrease the impact of a full /var file system, place /var on a separate partition [FILE-6310] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FILE-6310/
+
+  * Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft [USB-1000] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/USB-1000/
+
+  * Check DNS configuration for the dns domain name [NAME-4028] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NAME-4028/
+
+  * Purge old/removed packages (3 found) with aptitude purge or dpkg --purge command. This will cleanup old configuration files, cron jobs and startup scripts. [PKGS-7346] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/PKGS-7346/
+
+  * Check debsums configuration and enable checking regularly via a cron job (CRON_CHECK in default file). [PKGS-7370] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/PKGS-7370/
+
+  * Determine if protocol 'dccp' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Determine if protocol 'sctp' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Determine if protocol 'rds' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Determine if protocol 'tipc' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : Port (set 22 to )
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Enable logging to an external logging host for archiving purposes and additional protection [LOGG-2154] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/LOGG-2154/
+
+  * Check what deleted files are still in use and why. [LOGG-2190] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/LOGG-2190/
+
+  * Use SHA256 or SHA512 to create checksums in AIDE [FINT-4402] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FINT-4402/
+
+  * Determine if automation tools are present for system management [TOOL-5002] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/TOOL-5002/
+
+  * Consider restricting file permissions [FILE-7524] 
+    - Details  : See screen output or log file
+    - Solution : Use chmod to change file permissions
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FILE-7524/
+
+  * One or more sysctl values differ from the scan profile and could be tweaked [KRNL-6000] 
+    - Solution : Change sysctl value or disable test (skip-test=KRNL-6000:<sysctl-key>)
+    - Related resources
+      * Article: Linux hardening with sysctl settings: https://linux-audit.com/linux-hardening-with-sysctl/
+      * Article: Overview of sysctl options and values: https://linux-audit.com/kernel/sysctl/
+      * Website: https://cisofy.com/lynis/controls/KRNL-6000/
+
+  Follow-up:
+  ----------------------------
+  - Show details of a test (lynis show details TEST-ID)
+  - Check the logfile for all details (less /var/log/lynis.log)
+  - Read security controls texts (https://cisofy.com)
+  - Use --upload to upload data to central system (Lynis Enterprise users)
+
+================================================================================
+
+  Lynis security scan details:
+
+  Scan mode:
+  Normal [▆]  Forensics [ ]  Integration [ ]  Pentest [ ]
+
+  Lynis modules:
+  - Compliance status      [?]
+  - Security audit         [V]
+  - Vulnerability scan     [V]
+
+  Details:
+  Hardening index : 83 [################    ]
+  Tests performed : 277
+  Plugins enabled : 2
+
+  Software components:
+  - Firewall               [V]
+  - Intrusion software     [V]
+  - Malware scanner        [V]
+
+  Files:
+  - Test and debug information      : /var/log/lynis.log
+  - Report data                     : /var/log/lynis-report.dat
+
+================================================================================
+
+  Lynis 3.1.7
+
+  Auditing, system hardening, and compliance for UNIX-based systems
+  (Linux, macOS, BSD, and others)
+
+  2007-2025, CISOfy - https://cisofy.com/lynis/
+  Enterprise support available (compliance, plugins, interface and tools)
+
+================================================================================
+
+  [TIP]: Enhance Lynis audits by adding your settings to custom.prf (see /home/serverhh/lynis/default.prf for all settings)
+

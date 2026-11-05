@@ -1,6 +1,0 @@
-Hardening index: 83
-Points:          275 of 331
-Warnings:        0
-Suggestions:     24
-Reboot pending:  no
-Upgradable pkgs: 0

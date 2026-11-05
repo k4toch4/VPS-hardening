@@ -1,8 +1,0 @@
-label:               after-script
-date_utc:            2026-11-05 19:36:32
-hostname:            serverh
-os:                  Ubuntu 26.04.1 LTS
-kernel:              7.0.0-42-generic
-lynis_version:       3.1.7
-reboot_required:     no
-upgradable_packages: 5

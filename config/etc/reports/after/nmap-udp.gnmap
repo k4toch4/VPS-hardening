@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Thu Nov  5 17:02:43 2026 as: nmap -sU --top-ports 50 --reason -oA reports/after/nmap-udp 192.168.122.191
-Host: 192.168.122.191 (192.168.122.191)	Status: Up
-Host: 192.168.122.191 (192.168.122.191)	Ports: 	Ignored State: open|filtered (50)
-# Nmap done at Thu Nov  5 17:02:46 2026 -- 1 IP address (1 host up) scanned in 2.54 seconds

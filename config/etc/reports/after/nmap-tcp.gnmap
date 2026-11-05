@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Thu Nov  5 16:56:46 2026 as: nmap -sS -sV -p- -T4 --reason -oA reports/after/nmap-tcp 192.168.122.191
-Host: 192.168.122.191 (192.168.122.191)	Status: Up
-Host: 192.168.122.191 (192.168.122.191)	Ports: 22/open/tcp//tcpwrapped///	Ignored State: filtered (65534)
-# Nmap done at Thu Nov  5 16:58:15 2026 -- 1 IP address (1 host up) scanned in 88.83 seconds
